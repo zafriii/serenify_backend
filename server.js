@@ -30,6 +30,7 @@ const server = http.createServer(app); // Create the server for both HTTP and We
 
 // Socket.io setup
 const io = new Server(server, {
+  path: '/socket.io',
   cors: {
     origin: "https://serenifymentalwellness.netlify.app", // Adjust as needed (e.g., frontend server URL)
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
