@@ -46,7 +46,7 @@ socketHandler(io); // Pass the Socket.io instance to the handler
 
 // Middleware for CORS
 const corsOptions = {
-  origin: "http://localhost:5173", // Adjust according to the frontend URL
+  origin: "https://serenifymentalwellness.netlify.app", // Adjust according to the frontend URL
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true
 };
