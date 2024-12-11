@@ -79,7 +79,7 @@ app.use('/api/moods',moodRouter );
 app.use(errorMiddleware);
 
 // Database connection and starting the server
-const port = 5000;
+const PORT = 5000;
 // connectDB().then(() => {
 //   server.listen(port, () => {
 //     console.log(`Server is running at http://localhost:${port}`);
