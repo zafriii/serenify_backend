@@ -89,16 +89,11 @@ const PORT = 5000;
 // });
 
 
-connectDB()
-  .then(() => {
-    // Start the server only after a successful database connection
-    app.listen(PORT, '0.0.0.0', () => {
-      console.log(`Server is running on port ${PORT}`);
-    });
-  })
-  .catch((error) => {
-    console.error("Database connection failed:", error);
-    process.exit(1); // Exit the process if the database connection fails
-  });
+connectDB().then(() => {
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+})
 
 
