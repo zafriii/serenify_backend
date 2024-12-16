@@ -30,9 +30,8 @@ const server = http.createServer(app); // Create the server for both HTTP and We
 
 // Socket.io setup
 const io = new Server(server, {
-  path: '/socket.io',
   cors: {
-    origins: "*:*", // Adjust as needed (e.g., frontend server URL)
+    origin: "https://serenifymentalwellness.netlify.app", // Adjust as needed (e.g., frontend server URL)
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
     pingInterval: 25000, // Ping clients every 25 seconds
@@ -80,21 +79,13 @@ app.use('/api/moods',moodRouter );
 app.use(errorMiddleware);
 
 // Database connection and starting the server
-const PORT = 5000;
-// connectDB().then(() => {
-//   server.listen(port, () => {
-//     console.log(`Server is running at http://localhost:${port}`);
-//   });
-// }).catch((error) => {
-//   console.error("Database connection failed:", error);
-// });
-
-
+const port = 5000;
 connectDB().then(() => {
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server is running on port ${PORT}`);
+  server.listen(port, () => {
+    console.log(`Server is running at http://localhost:${port}`);
+  });
+}).catch((error) => {
+  console.error("Database connection failed:", error);
 });
-
-})
 
 
