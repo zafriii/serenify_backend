@@ -47,7 +47,8 @@ socketHandler(io); // Pass the Socket.io instance to the handler
 
 // Middleware for CORS
 const corsOptions = {
-  origin: "https://serenifymentalwellness.netlify.app", // Adjust according to the frontend URL
+  // origin: "https://serenifymentalwellness.netlify.app", // Adjust according to the frontend URL
+  origin: "*",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true
 };
